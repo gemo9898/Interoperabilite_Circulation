@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations en temps réel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Informations en temps réel</h1>
+    </header>
+    <main>
+        
+        <section id="covid">
+            <h2>État de l'épidémie de Covid</h2>
+            <canvas id="covidChart"></canvas>
+        </section>
+        <section id="velos">
+            <h2>Disponibilité des vélos partagés</h2>
+            <div id="map" style="height: 400px;"></div>
+        </section>
+        <section id="pollution">
+            <h2>Qualité de l'air</h2>
+            <div id="airQuality"></div>
+        </section>
+        <section id="meteo">
+            <h2>Météo</h2>
+            <div id="weather"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Sources des données : <a href="https://www.data.gouv.fr/">data.gouv.fr</a>, <a href="https://openweathermap.org/">OpenWeatherMap</a>, <a href="https://www.velolib.fr/">Vélolib</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
