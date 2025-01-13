@@ -42,3 +42,10 @@ footer {
     height: 400px;
     width: 100%;
 }
+a{
+    color: chocolate;
+}
+.leaflet-marker-icon-2 {
+    background-color: #ff0000; 
+    border: 2px solid #ffffff; 
+  }

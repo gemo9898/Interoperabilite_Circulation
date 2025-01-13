@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navigator.geolocation.getCurrentPosition(function(position) {
             const userLat = position.coords.latitude;
             const userLng = position.coords.longitude;
-            console.log(userLat);
-            console.log(userLng);
+            
 
             // Centrer la carte sur la position de l'utilisateur
             map.setView([userLat, userLng], 13);
@@ -64,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour obtenir le département à partir des coordonnées
     function fetchDepartment(latitude, longitude) {
         const url = `https://api-adresse.data.gouv.fr/reverse/?lon=${longitude}&lat=${latitude}`;
+        document.getElementById('url2').setAttribute('href', url) ;
+        
     
         fetch(url)
             .then(response => response.json())
@@ -76,11 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetchCovidData(department);
             })
             .catch(error => console.error('Erreur lors de la récupération du département:', error));
+         
     }
 
     // Fonction pour récupérer les données sur le Sras dans les eaux usées
     function fetchCovidData(department) {
         const url = "https://www.data.gouv.fr/fr/datasets/r/5c4e1452-3850-4b59-b11c-3dd51d7fb8b5";
+        document.getElementById('url1').setAttribute('href', url) ;
 
         fetch(url)
             .then(response => response.text())
@@ -130,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
  // Appel à l'API de qualité de l'air
 const airQualityApiUrl = "https://services3.arcgis.com/Is0UwT37raQYl9Jj/arcgis/rest/services/ind_grandest/FeatureServer/0/query?where=lib_zone%3D%27Nancy%27&orderByFields=date_ech%20DESC&outFields=*&resultRecordCount=1&f=pjson";
+document.getElementById('url3').setAttribute('href', airQualityApiUrl) ;
 
 // Réaliser l'appel à l'API de qualité de l'air
 fetch(airQualityApiUrl)
